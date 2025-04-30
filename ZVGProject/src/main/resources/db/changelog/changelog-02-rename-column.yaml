@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 02-rename-id-to-planet_id
+      author: you
+      changes:
+        - renameColumn:
+            tableName: planet
+            oldColumnName: id
+            newColumnName: planet_id
+            columnDataType: BIGINT

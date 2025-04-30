@@ -50,8 +50,14 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.32</version> <!-- последняя стабильная версия на апрель 2025 -->
+            <version>1.18.38</version> <!-- последняя стабильная версия на апрель 2025 -->
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.7.3</version>
         </dependency>
 
         <!-- Тестирование -->

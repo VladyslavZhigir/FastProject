@@ -1,5 +1,6 @@
 package org.KrJr.service;
 
+import org.KrJr.model.Planets.Earth;
 import org.KrJr.model.Planets.Planet;
 import org.KrJr.repository.PlanetRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,10 @@ public class PlanetService {
     }
 
    public void save(String planetName) {
-        planetRepository.save(planetName);
+       Earth earth = new Earth();
+       earth.setName("Earth");
+       earth.action(earth.getName());
+       planetRepository.save(earth);
    }
 
    public Planet getPlanetById(Long id) {

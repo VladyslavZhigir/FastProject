@@ -1,21 +1,32 @@
 package org.KrJr.model.Planets;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
 @Component
 @Data
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Planet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long planetId;
 
     private String name;
 
-    private Planet planet;
-
+    public void action(String name) {
+        switch (name) {
+            case "Earth":
+                System.out.println("I'm from Earth");
+                break;
+                case "Mars":
+                    System.out.println("I'm from Mars");
+                    break;
+            default:
+                System.out.println("I'm from Planet");
+                break;
+        }
+    }
 }

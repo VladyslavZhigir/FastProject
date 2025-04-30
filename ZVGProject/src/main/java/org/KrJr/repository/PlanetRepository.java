@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PlanetRepository extends JpaRepository<Planet, Long> {
-        Planet save(String planet);
         Planet findByNameIgnoreCase(String name);
 
         Planet findByPlanetId(Long planetId);
