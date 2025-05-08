@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="DiffGenerationConfig">
-    <option name="sourceModelValue" value="ZVGProject:ZVGProject" />
-    <option name="targetDbValue" value="ea4c96db-cb04-4dcf-a4a3-d8d70113078b" />
-    <option name="updateChangeLogPath" value="src/main/resources/db/changelog/db.changelog-master.yaml" />
-    <option name="updateDbConnectionName" value="ea4c96db-cb04-4dcf-a4a3-d8d70113078b" />
-  </component>
-</project>
