@@ -3,6 +3,7 @@ package org.krjr.usersubscriptions.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.krjr.usersubscriptions.dto.SubscriptionCountDTO;
 import org.krjr.usersubscriptions.entity.Subscription;
 import org.krjr.usersubscriptions.entity.User;
 import org.krjr.usersubscriptions.repository.SubscriptionRepository;
@@ -31,7 +32,7 @@ public class SubscriptionService {
     public List<Subscription> getUserSubscriptions(Long userId) {
         log.info("Getting subscriptions for userId: {}", userId);
         List<Subscription> subscriptions = subscriptionRepository.findByUserId(userId);
-        if (subscriptions.isEmpty() || subscriptions == null) {
+        if (subscriptions == null || subscriptions.isEmpty()) {
             throw new RuntimeException("No subscriptions found for user with ID: {}" + userId);
         }
         log.info("Found {} subscriptions for user with ID", subscriptions.size());
@@ -47,8 +48,7 @@ public class SubscriptionService {
         subscriptionRepository.deleteById(subId);
         log.info("Removed subscription for user with ID {}", subId);
     }
-//Не успел реализовать для реализации этого метода нужно переделывать таблицы в БД
-//    public List<Subscription> getTopSubscriptions() {
-//        return subscriptionRepository.findTop3();
-//    }
+    public List<SubscriptionCountDTO> getTopSubscriptions() {
+        return subscriptionRepository.findTopSubscriptions();
+    }
 }

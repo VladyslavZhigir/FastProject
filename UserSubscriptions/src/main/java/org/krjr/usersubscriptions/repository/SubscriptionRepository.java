@@ -1,5 +1,6 @@
 package org.krjr.usersubscriptions.repository;
 
+import org.krjr.usersubscriptions.dto.SubscriptionCountDTO;
 import org.krjr.usersubscriptions.entity.Subscription;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -14,6 +15,8 @@ public interface SubscriptionRepository extends JpaRepository<Subscription, Long
     Subscription findSubscriptionByServiceName(String serviceName);
 
 
-    @Query("SELECT s.serviceName, COUNT(s) as count FROM Subscription s GROUP BY s.serviceName ORDER BY count DESC LIMIT 3")
-    List<Subscription> findTopSubscriptions();
+    @Query(value = """ 
+SELECT s.service_name, COUNT(s.id) as count FROM subscriptions s GROUP BY s.service_name ORDER BY count DESC LIMIT 3
+""", nativeQuery = true)
+    List<SubscriptionCountDTO> findTopSubscriptions();
 }
