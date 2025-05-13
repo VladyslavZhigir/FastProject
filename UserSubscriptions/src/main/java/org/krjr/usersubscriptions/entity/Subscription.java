@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Table(name = "subscriptions")
+//Lombok аннотации работали нестабильно поэтому вместо них геттеры и сеттеры созданы вручную
 public class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -2,9 +2,9 @@ package org.krjr.usersubscriptions.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-
 import java.util.List;
 
+//Lombok аннотации работали нестабильно поэтому вместо них геттеры и сеттеры созданы вручную
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserDTO {
     private Long id;

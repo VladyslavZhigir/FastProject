@@ -113,7 +113,7 @@
                 <version>4.26.0</version> <!-- или актуальная версия -->
                 <configuration>
                     <changeLogFile>src/main/resources/db/changelog/db.changelog-master.xml</changeLogFile>
-                    <url>jdbc:postgresql://localhost:5432/usersubscriptions</url>
+                    <url>jdbc:postgresql://db:5432/usersubscriptions</url>
                     <username>postgres</username>
                     <password>admin</password>
                     <driver>org.postgresql.Driver</driver>

@@ -7,7 +7,6 @@ import org.krjr.usersubscriptions.mapper.UserMapper;
 import org.krjr.usersubscriptions.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 

@@ -3,7 +3,6 @@ package org.krjr.usersubscriptions.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.krjr.usersubscriptions.dto.SubscriptionDTO;
 import org.krjr.usersubscriptions.entity.Subscription;
 import org.krjr.usersubscriptions.entity.User;
 import org.krjr.usersubscriptions.repository.SubscriptionRepository;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -45,7 +43,6 @@ public class SubscriptionService {
     }
 
     public void removeSubscription(Long subId) {
-        //если нам не принципиально выводить название подписки которую мы удаляем то вызов метода findSubscriptionById можно убрать
         //так же мы можем удалять подписку не по ID а по имени сервиса подписку на который хотим удалить (зависит от бизнес требований)
         subscriptionRepository.deleteById(subId);
         log.info("Removed subscription for user with ID {}", subId);

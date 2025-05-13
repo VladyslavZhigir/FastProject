@@ -9,4 +9,5 @@
 
     <include file="db/changelog/dbversions/1.0-initial-db-creation.xml"/>
     <include file="db/changelog/dbversions/2.0-fix-for-autoincrement-type.xml"/>
+    <include file="db/changelog/dbversions/3.0-change-Id-Type.xml"/>
 </databaseChangeLog>

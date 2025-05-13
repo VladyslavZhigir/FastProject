@@ -1,13 +1,10 @@
 package org.krjr.usersubscriptions.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+//Lombok аннотации работали нестабильно поэтому вместо них геттеры и сеттеры созданы вручную
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SubscriptionDTO {
     @JsonInclude(JsonInclude.Include.NON_NULL)
